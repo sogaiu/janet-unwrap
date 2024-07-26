@@ -1,5 +1,5 @@
-(import ./vendor/janet-bounds/janet-bounds/bounds)
-(import ./vendor/janet-delims/janet-delims/delims)
+(import ./janet-bounds/janet-bounds :as bounds)
+(import ./janet-delims/janet-delims :as delims)
 
 (defn deprintf
   [fmt & args]
