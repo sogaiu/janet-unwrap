@@ -101,35 +101,29 @@
 (comment
 
   (find-wrap-info
-    ``
-    (def a
-      (tracev (+ 3
-                 (- 1 2))))
-    ``
+    (string `(def a` "\n"
+            `  (tracev (+ 3` "\n"
+            `             (- 1 2))))`)
     2 10 "tracev")
   # =>
   [[2 3 3 23] [2 11 3 22]]
 
   (find-wrap-info
-    ``
-    (def a
-      (tracev (+ 3
-                 (- 1 2))))
-    ``
+    (string `(def a` "\n"
+            `  (tracev (+ 3` "\n"
+            `             (- 1 2))))`)
     2 10 "def")
   # =>
   [[1 1 3 24] [1 6 3 23]]
-  
+
   (find-wrap-info
-    ``
-    (comment
-
-      (+ 1 1)
-      # =>
-      2
-
-      )
-    ``
+    (string `(comment`  "\n"
+                        "\n"
+            `  (+ 1 1)` "\n"
+            `  # =>`    "\n"
+            `  2`       "\n"
+                        "\n"
+            `  )`)
     3 3 "comment")
   # =>
   [[1 1 7 4] [3 3 5 4]]
